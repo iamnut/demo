@@ -12,6 +12,7 @@
     <script>
       axios.get('https://2ny9p0tzic.execute-api.ap-southeast-1.amazonaws.com/prod')
         .then(function (response) {
+            console.log(response);
             document.getElementById('response').innerHTML = 'response.body: ' + response.body;
         })
         .catch(function (err) {
