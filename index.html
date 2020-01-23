@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>AWS Lambda Demo</title>
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+  </head>
+  <body class="container">
+    <h1>AWS Lambda Demo</h1>
+    <p id="response"></p>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      axios.get('https://hkyruzxqdh.execute-api.ap-southeast-1.amazonaws.com/prod/test')
+        .then(function (response) {
+            document.getElementById('response').innerHTML = 'response.body: ' + response.body;
+        })
+        .catch(function (err) {
+          document.getElementById('response').innerHTML = '<li class="text-danger">' + err.message + '</li>';
+        });
+    </script>
+  </body>
+</html>
